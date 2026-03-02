@@ -1,0 +1,37 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    border: 2px solid red;
+    height: 100vh;
+}
+.box1{
+    margin-top: 20px;
+    background-color: green;
+    border: 4px double yellow ;
+    /* border-radius: 8px; */
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-left: 5px;
+    margin: 10px 5px;
+}
+/* .box2,.box3{
+    height: 100px;
+    width: 100px;
+} */
+.box2{
+        height: 100px;
+    width: 100px;
+    background-color: red;
+    float: left;
+}
+.box3{
+        height: 100px;
+    width: 100px;
+    background-color: green;
+    float: right;
+}
+.box4{
+    clear: both;
+}
