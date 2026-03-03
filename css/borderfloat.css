@@ -3,8 +3,8 @@
     padding: 0;
 }
 .container{
-    border: 2px solid red;
-    height: 100vh;
+    /* border: 2px solid red;
+    height: 100vh; */
 }
 .box1{
     margin-top: 20px;
@@ -34,4 +34,69 @@
 }
 .box4{
     clear: both;
+}
+
+nav{
+    height: 80px;
+    background-color: aquamarine;
+}
+nav > h1{
+    float: left;
+    line-height:80px ;
+    margin-left: 30px;
+}
+nav > ul{
+    float: right;
+    line-height: 80px;
+    list-style-type: none;
+    margin-right: 20px;
+
+}
+nav ul li{
+    float: right;
+    margin: 0 10px;
+    text-transform: uppercase;
+    font-family:"Courier New";
+    font-weight: 900;
+}
+nav ul li a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.pst{
+    background-color: blueviolet;
+    top: 0;
+
+    position: sticky;
+}
+.red{
+    width: 50px;
+    height: 50px;
+    background-color: red;
+    top: 20px;
+    left: 20px;
+    position: absolute;
+    z-index: 5;
+}
+.pos{
+    /* background-color: grey; */
+    height: 200px;
+    width: 100%;
+    position: relative;
+}
+.blue{
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.purple{
+    height: 50px;
+    width: 50px;
+    background-color: purple;
+    position: absolute;
+    z-index: 6;
 }
