@@ -100,3 +100,46 @@ nav ul li a{
     position: absolute;
     z-index: 6;
 }
+
+.nav{
+    height: 80px;
+    width: 100%;
+    background-color: tomato;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+}
+.nav ul{
+    list-style-type: none;
+    display: flex;
+    text-transform: uppercase;
+}
+.nav ul li{
+    padding: 10px 10px;
+}
+.nav ul li a{
+    text-decoration: none;
+    color: black;
+}
+.nav ul li a:hover{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+@media screen and (max-width:460px){
+    .nav{
+        height: 100vh;
+        flex-direction: column;
+    }
+    .nav ul {
+        display: flex;
+        flex-direction: column;
+
+    }
+}
+@media screen and (min-width:360px) and (max-width:460px){
+    .nav{
+        background-color: navy;
+    }
+}
