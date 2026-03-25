@@ -5,9 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+        }
+    </style>
 </head>
 
 <body>
+    <div id="demo" style="height: 100vh; width: 100%;">
+        <button onclick="sm() ">click me!</button>
+        <button onclick="sp() ">reset</button>
+
+    </div>
 
     <script>
         // 01 display output
@@ -20,12 +30,12 @@
 
         // 02 variables name legal and illegal names 
 
-        var firstName; // camel case writing
-        var FirstName; // pascal case writing 
-        var first_name; // snake case writing
-        var first1name; // number case writing
-        var $first$name; // symbol case writing
-        var firstname; // simple case writing
+        // var firstName; // camel case writing
+        // var FirstName; // pascal case writing 
+        // var first_name; // snake case writing
+        // var first1name; // number case writing
+        // var $first$name; // symbol case writing
+        // var firstname; // simple case writing
 
         // var 1stname ;
 
@@ -37,12 +47,12 @@
         // console.log(num1 + num2)
         // console.log(num1 + 50)
 
-        var a = 5;
-        var b = 10;
+        // var a = 5;
+        // var b = 10;
 
-        a = a ^ b; // 5 + 10 = 15
-        b = a ^ b; // 15 - 10 = 5
-        a = a ^ b; // 15 - 5 =  10
+        // a = a ^ b; // 5 + 10 = 15
+        // b = a ^ b; // 15 - 10 = 5
+        // a = a ^ b; // 15 - 5 =  10
 
         // console.log(a, b)
 
@@ -158,8 +168,8 @@
         // var height = 5.7
 
         // 08 arrays - non primitive data type - object - values - index 
-
-        var arr = []; // empty array
+// 
+        // var arr = []; // empty array
         // arr[0] = 1;    // index number 0
         // arr[1] = "shakeel";
         // arr[9] = "aslam"
@@ -222,18 +232,18 @@
         //     console.log(i, "Pakistan")
         // }
 
-        names = [
-            "Ali Raza", "Ahmed Khan", "Usman Tariq", "Hassan Ali", "Bilal Ahmed",
-            "Zain Ul Abideen", "Faisal Malik", "Imran Khan", "Saad Hussain", "Hamza Shah",
-            "Abdullah Qureshi", "Omar Farooq", "Talha Anwar", "Noman Iqbal", "Shahzaib Khan",
-            "Ayesha Khan", "Fatima Noor", "Zainab Ali", "Maryam Nawaz", "Sana Ahmed",
-            "Hira Sheikh", "Iqra Aziz", "Mahnoor Fatima", "Laiba Khan", "Anaya Ali",
-            "Amna Tariq", "Sidra Iqbal", "Kiran Malik", "Rabia Basri", "Alina Sheikh",
-            "Muneeb Ahmad", "Danish Ali", "Asad Raza", "Khurram Shahzad", "Rizwan Ahmed",
-            "Waqar Younis", "Babar Azam", "Sarfaraz Ahmed", "Shoaib Malik", "Shadab Khan",
-            "Bushra Bibi", "Nadia Khan", "Mehwish Hayat", "Saba Qamar", "Sanam Baloch",
-            "Aiman Khan", "Minal Khan", "Komal Aziz", "Ushna Shah", "Sonya Hussyn"
-        ]
+        // names = [
+        //     "Ali Raza", "Ahmed Khan", "Usman Tariq", "Hassan Ali", "Bilal Ahmed",
+        //     "Zain Ul Abideen", "Faisal Malik", "Imran Khan", "Saad Hussain", "Hamza Shah",
+        //     "Abdullah Qureshi", "Omar Farooq", "Talha Anwar", "Noman Iqbal", "Shahzaib Khan",
+        //     "Ayesha Khan", "Fatima Noor", "Zainab Ali", "Maryam Nawaz", "Sana Ahmed",
+        //     "Hira Sheikh", "Iqra Aziz", "Mahnoor Fatima", "Laiba Khan", "Anaya Ali",
+        //     "Amna Tariq", "Sidra Iqbal", "Kiran Malik", "Rabia Basri", "Alina Sheikh",
+        //     "Muneeb Ahmad", "Danish Ali", "Asad Raza", "Khurram Shahzad", "Rizwan Ahmed",
+        //     "Waqar Younis", "Babar Azam", "Sarfaraz Ahmed", "Shoaib Malik", "Shadab Khan",
+        //     "Bushra Bibi", "Nadia Khan", "Mehwish Hayat", "Saba Qamar", "Sanam Baloch",
+        //     "Aiman Khan", "Minal Khan", "Komal Aziz", "Ushna Shah", "Sonya Hussyn"
+        // ]
 
         // names[9] = "akasha"
 
@@ -303,16 +313,105 @@
         // var d = Math.ceil(5.1111111);
         // console.log(d)
 
-        var num1 = Math.round(Math.random()* 10)
-        console.log(num1)
+        // var num1 = Math.round(Math.random()* 10)
+        // console.log(num1)
 
-        var input = parseInt(prompt("Enter the value : "))
+        // var input = parseInt(prompt("Enter the value : "))
 
-        if (num1 === input){
-            console.log("your number is right 💯💯💯")
-        }else{
-            console.log("your number is wrong.. 😭😭😭")
+        // if (num1 === input){
+        //     console.log("your number is right 💯💯💯")
+        // }else{
+        //     console.log("your number is wrong.. 😭😭😭")
+        // }
+
+        // user number gues number == number 
+
+
+        // 12 functions : event : event handler : 
+
+        // function declaration
+
+        // var a = 12 // variable declaration
+        // console.log(a)  // call var
+
+        // regular function
+        
+
+        // var : hoisting , let , const 
+
+        // sm() // regular function : hoisting 
+
+        // function sm(a,b){
+        //     var num1 = 34
+        //     num1 = num1.toString()
+        //     console.log("hello world", a + " " +  b, typeof num1 )
+        // }
+
+        // default arguments : positional arguments
+
+        // function sp(a = 10, b = 12){
+        //     console.log(a + b)
+        // }
+        // sp(5,5);
+
+        // 10 mcqs 2-5 practical questions 
+
+
+        // 13 functions - f declaration / f expressions
+
+        // function sm(){
+        //     console.log("hello world FD")
+        // }
+        // sm();
+
+        // var sr = function(){
+        //     console.log("Function expressions")
+        // }
+        // sr()
+
+        // var sp = ()=> {
+        //     console.log("hello world AF")
+        // }
+        // sp()
+
+        // function sm(a){
+        //     console.log("before return")
+        //     return a;
+        //     console.log("after return")
+        // }
+
+        // function sp(a) {return a }
+        // var sm = (a) => a;
+        // console.log(sm(9))
+
+        // (function() {console.log("Hello world IIFE ")})()
+        // !function(){console.log("hello wrold")}() 
+
+        // 14 DOM 
+
+        var demo = document.getElementById("demo")
+
+        function sm(){
+            demo.style.backgroundColor = "red"
         }
+
+        function sp(){
+            demo.style.backgroundColor = "white"
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
