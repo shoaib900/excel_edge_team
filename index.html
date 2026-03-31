@@ -13,9 +13,13 @@
 </head>
 
 <body>
-    <div id="demo" style="height: 100vh; width: 100%;">
+    <!-- <div id="demo" style="height: 100vh; width: 100%;">
         <button onclick="sm() ">click me!</button>
-        <button onclick="sp() ">reset</button>
+        <button onclick="sp() ">reset</button> -->
+
+        <input type="text" placeholder="Enter your name" id="name">
+        <button onclick="sub() ">Submit</button>
+        <div id="demo"></div>
 
     </div>
 
@@ -389,48 +393,51 @@
 
         // 14 DOM 
 
+     //   var demo = document.getElementById("demo")
+
+        // function sm(){
+        //     demo.style.backgroundColor = "red"
+        // }
+
+        // function sp(){
+        //     demo.style.backgroundColor = "white"
+        // }
+
+        function sub(){
+            var name = document.getElementById("name")
+            var demoname = document.getElementById("demo");
+
+            console.log(name.value)
+            // document.write(name.value)
+            demoname.innerHTML = name.value; 
+            name.value = "";
+        }
+
+
+
+        var obj1 = {
+            "name":"atif",
+            "age": 33,
+            "education":"BSCS",
+            "full name":" ali Murtaza Hashmi."
+        }
+
+        obj1.name = "ali murtaza"
+        obj1.gender = "male"
+
+        console.log(obj1["full name"])
+
+        console.log(obj1)
+
         var demo = document.getElementById("demo")
 
-        function sm(){
-            demo.style.backgroundColor = "red"
-        }
-
-        function sp(){
-            demo.style.backgroundColor = "white"
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        // demo.innerHTML = "<h1> " +  obj1.name + "</h1>" // concatenation 
+        // demo.innerHTML = ` <h1> ${obj1.name} </h1> ` // template literals 
+        //demo.innerHTML = `
+        // <h1> name:  ${obj1.name} </h1> 
+        // <h2>age: ${obj1.age} </h2>
+        // <h3>Education:  ${obj1.education} </h3>
+        // <h4> Gender: ${obj1.gender} </h4>`
 
 
 
