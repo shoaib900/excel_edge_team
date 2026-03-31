@@ -1,84 +1,453 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="icon" href="./assets/123.png">
+    <style>
+        *{
+            margin: 0;
+        }
+    </style>
 </head>
+
 <body>
+    <!-- <div id="demo" style="height: 100vh; width: 100%;">
+        <button onclick="sm() ">click me!</button>
+        <button onclick="sp() ">reset</button> -->
+
+        <input type="text" placeholder="Enter your name" id="name">
+        <button onclick="sub() ">Submit</button>
+        <div id="demo"></div>
+
+    </div>
+
+    <script>
+        // 01 display output
+
+        // console.log("hello world")
+        // console.warn("warning again")
+        // console.info("information is given")
+        // console.error("error is given now..")
 
 
-    <p>5 <sup>2</sup> </p>
-    <h1>heading 01</h1>
-    <h2>heading 02</h2>
-    <h3>heading 03</h3>
-    <h4>heading 04</h4>
-    <h5>heading 05</h5>
-    <h6>heading 06</h6>
-    <p>hello paragraph</p>
-    <p>H <sub>2</sub>O</p>
-    <abbr title="International system of Ofices">ISO</abbr>
-    <p>
-        <b>bold</b>
-        <i>italic</i>
-        <u>underline</u>
-        <s>strikethrough</s> <br />
-        <del>delete</del>
-        <em>emphasis</em>
-        <marquee behavior="" direction=""> hello wasim asif</marquee>
-    </p>
-    <br>
+        // 02 variables name legal and illegal names 
 
-    <img src="./assets/123.png" height="300px" alt="skillermind" title="skillermind">
+        // var firstName; // camel case writing
+        // var FirstName; // pascal case writing 
+        // var first_name; // snake case writing
+        // var first1name; // number case writing
+        // var $first$name; // symbol case writing
+        // var firstname; // simple case writing
 
-    <br>
-    <hr>
+        // var 1stname ;
 
-    <a href="./routes/about.html"> about page</a>
-    <br>
-    <a href="https://www.google.com/" target="_blank">google</a>
 
-    <hr>
-    <h1>Box file</h1>
-    <p>a document is good in a box file rather than on the desk</p>
+        // 03 math operation 
 
-    <hr>
+        // var num1 = 10;
+        // var num2 = 15;
+        // console.log(num1 + num2)
+        // console.log(num1 + 50)
 
-    <!-- list -->
+        // var a = 5;
+        // var b = 10;
 
-    <ol start="50">
-        fruits:
-        <li>apple</li>
-        <li>banana</li>
-        <li>orange</li>
-    </ol>
+        // a = a ^ b; // 5 + 10 = 15
+        // b = a ^ b; // 15 - 10 = 5
+        // a = a ^ b; // 15 - 5 =  10
 
-    <ul>students:
-        <li>matric</li>
-        <li>intermediate</li>
-        <li>bachoular</li>
-    </ul>
+        // console.log(a, b)
 
-    <dl>
-        <dt> <b>Physics:</b> </dt>
-        <dd>the study of matter and energy and thier relationship.</dd>
-    </dl>
-    <hr>
 
-    <ol type="I">
-        students:
-        <li>matric</li>
-        <li>inter</li>
-        <li>bachoular
-            <ul>
-                <li>isma</li>
-                <li>asif</li>
-                <li>nadeem</li>
-            </ul>
-        </li>
-    </ol>
-    
+        // 04 data types 
+
+        // var name = "arshad"
+        // console.log(name, typeof name)
+
+        // var age = 20;
+        // console.log(age, typeof (age))
+
+        // var avg = 29.32;
+        // console.log(avg, typeof avg)
+
+        // var bool = true
+        // console.log(bool, typeof bool)
+
+        // var und ;
+        // var und = undefined;
+        // console.log(und, typeof und)
+        // var obj = null;
+        // console.log(obj, typeof null)
+
+        // var arr = ["atif", "asif", "ajmal", "memoona"]
+        // console.log(arr, typeof arr)
+
+        // var obj2 = { "name": "afsana", "age": 20 }
+        // console.log(obj2, typeof obj2)
+
+        // var bigint = 1111111111222222222223333333333333444444444456789n
+        // console.log(bigint, typeof bigint)
+
+        // var sym = Symbol("*")
+        // console.log(sym, typeof sym)
+
+        // 05 input prompts 
+
+        // var name = prompt("Enter your name")
+        // console.log(name , typeof name)
+
+        // var num1 = prompt("enter your number>>>>")
+        // num1 = parseInt(num1)
+        // console.log(num1, typeof num1)
+
+        // var num1 = prompt("enter your number>>>>")
+        // num1 = parseFloat(num1)
+        // console.log(num1, typeof num1)
+
+        // var num1 = prompt("enter your number>>>>")
+        // num1 = Number(num1)
+        // console.log(num1, typeof num1)
+
+        // 06 if, else, else if conditions statements vanilla javascript/traditional javascript
+
+        // var marks = 85;
+
+        // if(marks === 90){
+        //     console.log("you have passed")
+        // }else{
+        //     console.log("you have no number 90")
+        // }
+
+        // if(marks === 90){
+        //     console.log("you have 90 marks")
+        // }else if(marks === 80){
+        //     console.log("you have 80 marks")
+        // }else{
+        //     console.log("you have neither 90 marks nor 80 marks")
+        // }
+
+        // var marks = 76;
+
+        // if(marks >= 90 && marks <= 100 ){ 
+        //     console.log("Grade A+ ") 
+        // }else if(marks > 100){
+        //     console.log("You have wrong entered number")
+        // }else if(marks >= 80 && marks <90 ){
+        //     console.log("Grade B+")
+        // }else if(marks >= 70 && marks < 80 ){
+        //     console.log("Grade C")
+        // }
+
+        // var marks = 91;
+        // var age = 18;
+        // var marks2 = 90
+
+        // if(marks > 90 || (age > 18 && marks2 > 90) ){
+        //     console.log("pass")
+        // }else{
+        //     console.log("failed")
+        // }
+
+        // ecmascript 2015 / 6 / javascirpt 2015 // ES 6/ ES 2015
+
+        // var marks = 91;
+
+        // (marks === 90) & console.log("pass")
+        // (marks === 90) ?  console.log("pass") : console.log("failed")
+
+        // (marks >= 90) ? console.log("Grade A+") : (marks >= 80) ? console.log("Grade B+") : console.log("Failed")
+
+        // (marks > 90) ? console.log("Grade A") : (marks >= 50) & console.log("pass 50 plus")
+
+        // (marks > 90) & console.log("pass")
+        // (marks > 90) ? console.log("pass") : console.log("failed")
+
+        // (marks > 90) ? console.log("Pass") : (marks > 80) & console.log("pass 80 marks")
+
+
+        //var age = 18
+        // var education = 12
+        // var height = 5.7
+
+        // 08 arrays - non primitive data type - object - values - index 
+// 
+        // var arr = []; // empty array
+        // arr[0] = 1;    // index number 0
+        // arr[1] = "shakeel";
+        // arr[9] = "aslam"
+
+        // arr.push("shakeel") // add in last array
+        // arr.push("anam","falak","maavia","asia")
+        // arr.pop() 
+
+        // arr.unshift("kiran","firdous","fozia")
+        // arr.shift() 
+        // arr.splice(3,4,"faiza","adil")
+
+        // var arr2 = arr.slice(1,3)
+
+        // console.log(arr, arr2)
+
+        // var arr = [5,4,3,2,1,6,7,8,9]
+
+        // arr.sort();
+
+        // arr.reverse()
+
+        // console.log(arr, arr.length)
+
+        // var arr1 = ["raheel","adil"]
+        // var arr2 = ["akash","ashutosh"]
+
+        // var concati = arr1.concat(arr2)
+
+        // console.log(concati)
+
+        // var arr1 = ["peter"] 
+
+        // var getdata = arr1.concat("parker")
+        // console.log(getdata)
+
+        // primitive / non primitive data type - pass by value / pass by reference difference
+
+        // var a = 10;
+        // var b = a; 
+        // console.log(a,b)
+        // a = 12;
+        // console.log(a,b)
+
+        // var x = ["adil","afaq"]
+        // var y = x ;
+        // console.log(x,y)
+        // x[0] = "ashfaaq"
+        // console.log(x,y)
+
+
+
+        // get 7 value from user prompt include array 
+
+        // 09 loops 
+
+        // for loop - while loop - do while loop 
+
+        // for (var i = 0; i < 100; i++) {
+        //     console.log(i, "Pakistan")
+        // }
+
+        // names = [
+        //     "Ali Raza", "Ahmed Khan", "Usman Tariq", "Hassan Ali", "Bilal Ahmed",
+        //     "Zain Ul Abideen", "Faisal Malik", "Imran Khan", "Saad Hussain", "Hamza Shah",
+        //     "Abdullah Qureshi", "Omar Farooq", "Talha Anwar", "Noman Iqbal", "Shahzaib Khan",
+        //     "Ayesha Khan", "Fatima Noor", "Zainab Ali", "Maryam Nawaz", "Sana Ahmed",
+        //     "Hira Sheikh", "Iqra Aziz", "Mahnoor Fatima", "Laiba Khan", "Anaya Ali",
+        //     "Amna Tariq", "Sidra Iqbal", "Kiran Malik", "Rabia Basri", "Alina Sheikh",
+        //     "Muneeb Ahmad", "Danish Ali", "Asad Raza", "Khurram Shahzad", "Rizwan Ahmed",
+        //     "Waqar Younis", "Babar Azam", "Sarfaraz Ahmed", "Shoaib Malik", "Shadab Khan",
+        //     "Bushra Bibi", "Nadia Khan", "Mehwish Hayat", "Saba Qamar", "Sanam Baloch",
+        //     "Aiman Khan", "Minal Khan", "Komal Aziz", "Ushna Shah", "Sonya Hussyn"
+        // ]
+
+        // names[9] = "akasha"
+
+        // for(var i = 0;i < names.length;i++){
+        //     console.log(i, names[i])
+        // }
+
+        // console.log(names.length)
+
+        // var i= names.length-1;
+        // while(i >= 0){
+        //     console.log(i, names[i])
+        //     i--
+        // }
+
+        // github shoaib900 
+
+        // var i = 0;
+        // do{
+        //     console.log(i,names[i])
+        //     i++
+        // }while(i < names.length);
+
+        // var i = 7;
+        // do {
+        //     console.log(i,"hello Mr. Shakeel")
+        //     i++
+        // } while (i < 2);
+
+//    for(i in names){
+//         console.log(i, names[i] )
+//    }
+
+        // for(values of names){
+        //     console.log(values)
+        // }
+
+        // 10 javascript hoisting 
+
+        // var a;   // initialize variable - undefined
+        // a == 10;  // declare a variable
+        // console.log(a)  // call a variable 
+
+        // a = 10;
+        // console.log(a)
+        // var a ;
+
+
+        // let ba;
+        // ba = 5;
+        // console.log(ba)
+
+        // console.log(ab)
+        // const ab = 10;
+
+        // 11 math operation 
+
+        // var a = Math.random();  5.5 = 6 , 5.4 = 5
+        // console.log(a)
+
+        // var b = Math.round(5.47529304875)
+        // console.log(b)
+
+        // var c = Math.floor(5.9999999)
+        // console.log(c)
+
+        // var d = Math.ceil(5.1111111);
+        // console.log(d)
+
+        // var num1 = Math.round(Math.random()* 10)
+        // console.log(num1)
+
+        // var input = parseInt(prompt("Enter the value : "))
+
+        // if (num1 === input){
+        //     console.log("your number is right 💯💯💯")
+        // }else{
+        //     console.log("your number is wrong.. 😭😭😭")
+        // }
+
+        // user number gues number == number 
+
+
+        // 12 functions : event : event handler : 
+
+        // function declaration
+
+        // var a = 12 // variable declaration
+        // console.log(a)  // call var
+
+        // regular function
+        
+
+        // var : hoisting , let , const 
+
+        // sm() // regular function : hoisting 
+
+        // function sm(a,b){
+        //     var num1 = 34
+        //     num1 = num1.toString()
+        //     console.log("hello world", a + " " +  b, typeof num1 )
+        // }
+
+        // default arguments : positional arguments
+
+        // function sp(a = 10, b = 12){
+        //     console.log(a + b)
+        // }
+        // sp(5,5);
+
+        // 10 mcqs 2-5 practical questions 
+
+
+        // 13 functions - f declaration / f expressions
+
+        // function sm(){
+        //     console.log("hello world FD")
+        // }
+        // sm();
+
+        // var sr = function(){
+        //     console.log("Function expressions")
+        // }
+        // sr()
+
+        // var sp = ()=> {
+        //     console.log("hello world AF")
+        // }
+        // sp()
+
+        // function sm(a){
+        //     console.log("before return")
+        //     return a;
+        //     console.log("after return")
+        // }
+
+        // function sp(a) {return a }
+        // var sm = (a) => a;
+        // console.log(sm(9))
+
+        // (function() {console.log("Hello world IIFE ")})()
+        // !function(){console.log("hello wrold")}() 
+
+        // 14 DOM 
+
+     //   var demo = document.getElementById("demo")
+
+        // function sm(){
+        //     demo.style.backgroundColor = "red"
+        // }
+
+        // function sp(){
+        //     demo.style.backgroundColor = "white"
+        // }
+
+        function sub(){
+            var name = document.getElementById("name")
+            var demoname = document.getElementById("demo");
+
+            console.log(name.value)
+            // document.write(name.value)
+            demoname.innerHTML = name.value; 
+            name.value = "";
+        }
+
+
+
+        var obj1 = {
+            "name":"atif",
+            "age": 33,
+            "education":"BSCS",
+            "full name":" ali Murtaza Hashmi."
+        }
+
+        obj1.name = "ali murtaza"
+        obj1.gender = "male"
+
+        console.log(obj1["full name"])
+
+        console.log(obj1)
+
+        var demo = document.getElementById("demo")
+
+        // demo.innerHTML = "<h1> " +  obj1.name + "</h1>" // concatenation 
+        // demo.innerHTML = ` <h1> ${obj1.name} </h1> ` // template literals 
+        //demo.innerHTML = `
+        // <h1> name:  ${obj1.name} </h1> 
+        // <h2>age: ${obj1.age} </h2>
+        // <h3>Education:  ${obj1.education} </h3>
+        // <h4> Gender: ${obj1.gender} </h4>`
+
+
+
+
+
+
+
+
+    </script>
+
 </body>
+
 </html>

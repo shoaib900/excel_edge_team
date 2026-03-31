@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // class Animal{
+        //     name
+
+        // }
+
+// var obj = new Animal();
+// obj.name = "atif" 
+// obj.age = 22
+// console.log(obj.name, obj.age)
+
+// var obj2 = new Animal();
+// obj2.name = "asif";
+// obj2.age = 23;
+// console.log(obj2.name, obj2.age)
+
+// class Animal{
+//     constructor(name,age){
+//         this.name = name;
+//         this.age = age;
+//     }
+// }
+// var obj1 = new Animal("atif",22)
+// console.log(obj1.name , obj1.age)
+
+// var obj2 = new Animal("asif",23);
+// console.log(obj2.name,obj2.age)
+
+
+// class Employee{
+//     constructor(name,age){
+//         this.age = age;
+//         }
+        
+//         display(){
+//         return `my name is ${this.name} and my age is ${this.age}`
+//         }
+//         }
+//         var obj = new Employee("adnan",33)
+        
+//         console.log(obj.display() )
+        
+//         class Emp1 extends Employee {
+//         }
+//         var ab = new Emp1("asif",44);
+//         console.log(ab.display() )
+        // this.name = name;
+
+
+// class Employee{
+//     constructor(name,salary){
+//         this.name = name;
+//         this.salary = salary;
+//     }
+
+//     bonus(){
+//         var salbonus = this.salary * 2
+//         return ` my name is ${this.name} and my salary is ${salbonus} `
+//     }
+// }
+
+// var obj = new Employee("adil", 49000) 
+// console.log(obj.bonus() )
+
+
+// class Shape{
+//     show(){
+//         console.log("Shape is calling...")
+//     }
+// }
+
+// var obj = new Shape();
+// obj.show() 
+
+// class Ractangle extends Shape{
+//     show(){
+//         console.log("Ractangle is calling...")
+//     }
+// }
+
+// var obj2 = new Ractangle();
+// obj2.show() 
+
+class Employee{
+    #salary = 0
+
+    setsalary(amount){
+        this.#salary += amount
+    }
+    getSalary(){
+        return this.#salary
+    }
+}
+
+var obj = new Employee();
+
+obj.setsalary(199);
+console.log(obj.getSalary())
+
+
+    
+
+
+
+
+    </script>
+    
+</body>
+</html>
