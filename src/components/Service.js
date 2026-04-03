@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import style from "./service.module.css";
 
-const Service = () => {
+const Service = ({Count}) => {
+
+    // const {Count} = props
+
     const [number, setNumber] = useState(0);
     const [errormsg,setErrormsg] = useState("");
 
@@ -13,6 +16,13 @@ const Service = () => {
             setNumber(number - 1);
         }
     }
+
+    function reset(){
+        setNumber(0)
+    }
+    function sum10(){
+        setNumber(number +10);
+    }
     return (
         <div>
 
@@ -21,7 +31,12 @@ const Service = () => {
                 <button onClick={Subtract }>-</button> 
                 <br />
                 <p>{errormsg} </p>
+                <hr />
+                <button onClick={reset }>reset</button> &nbsp; 
+                <button onClick={sum10 }>plus by 10</button>
                 </h1>
+                <hr />
+                <h2>{Count} </h2>
 
         </div>
     )
