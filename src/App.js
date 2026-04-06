@@ -1,42 +1,25 @@
 import React from 'react'
-import Service from './components/Service'
-import About from './components/About'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Service from './Routes/Service'
+import About from './Routes/About'
+import Navbar from './components/Navbar'
 
 const App = () => {
-  const [data,setData] = React.useState([]);
-
-  const [count,setCount] = React.useState(0);
-
-  React.useEffect( ()=> {
-    fetch('https://jsonplaceholder.typicode.com/todos/')
-      .then(response => response.json())
-      .then(json => setData(json))
-  })
-
-  console.log("data : " , data)
-
   return (
-    <div>
+    <BrowserRouter>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Service />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
 
-      <h1 style={{color:"blue",backgroundColor:"grey"}}>Hello Mister asutosh...</h1>
+        <div>
+          <h1>Hello bottom bar</h1>
+        </div>
 
-      <hr />
-      <Service Count={count} />
-      <About />
-      <hr />
-
-      {
-        data.map((item)=> {
-          return(
-            <div>
-              <h1> {item.id}   {item.title}</h1>
-
-            </div>
-          )
-        })
-      }
-      
-    </div>
+      </div>
+    </BrowserRouter>
   )
 }
 
