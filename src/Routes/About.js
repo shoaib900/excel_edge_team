@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import style from "./about.module.css"
+import Button from "../components/Button";
 
 const About = () => {
   const [data, setData] = useState([]);
@@ -17,6 +18,7 @@ const About = () => {
   return (
     <div >
       <h1 className='h1'>this is about page</h1>
+      <Button>click me</Button>
 
       <div className={style.container}>
 

@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import Button from '../components/Button';
 
 const Service = () => {
   const [count,setCount] = useState(0)
@@ -13,7 +14,7 @@ const Service = () => {
     }
   }
   return (
-    <div>
+    <div className='container'>
         <h1> this is service page {count} </h1>
         <p style={{color:"tomato"}}>{errmsg}</p>
 
@@ -21,6 +22,8 @@ const Service = () => {
         <button onClick={dec}>Subtract</button>
 
       <h1><pre>hello                      world</pre></h1>
+
+      <Button > abrakadabra</Button>
       
     </div>
   )

@@ -7,15 +7,15 @@ import Navbar from './components/Navbar'
 const App = () => {
   return (
     <BrowserRouter>
-      <div>
+      <div style={{height:"100vh",backgroundColor:"pink"}}>
         <Navbar />
         <Routes>
           <Route path="/" element={<Service />} />
           <Route path="/about" element={<About />} />
         </Routes>
 
-        <div>
-          <h1>Hello bottom bar</h1>
+        <div className='container-fluid position-absolute bottom-0 bg-dark text-white '>
+          <h1 className='text-center'>Hello bottom bar</h1>
         </div>
 
       </div>
