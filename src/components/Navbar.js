@@ -7,8 +7,9 @@ const Navbar = () => {
         <Container>
             <Title>hello title tag</Title>
             <Ulist>
-                <li><Link to={"/"}>Service</Link></li>
-                <li><Link to={"/about"}>About</Link></li>
+                <li><Link to={"/"}>Service</Link></li> &nbsp;
+                <li><Link to={"/about"}>About</Link></li>&nbsp;
+                <li><Link to={"/rhf"}>RHF</Link></li>
             </Ulist>
 
         </Container>
