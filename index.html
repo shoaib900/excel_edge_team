@@ -1,84 +1,436 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SkillerMind Admissions Open</title>
     <link rel="icon" href="./assets/123.png">
+    <style>
+        :root {
+            --bg: #07111f;
+            --bg-soft: rgba(11, 26, 46, 0.76);
+            --panel: rgba(11, 26, 46, 0.86);
+            --line: rgba(140, 214, 255, 0.18);
+            --text: #f4fbff;
+            --muted: #b8d8ef;
+            --accent: #70efff;
+            --accent-strong: #5f7cff;
+            --highlight: #a9ff6d;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            font-family: Arial, Helvetica, sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(95, 124, 255, 0.35), transparent 30%),
+                radial-gradient(circle at bottom right, rgba(112, 239, 255, 0.28), transparent 28%),
+                linear-gradient(140deg, #030814 0%, #081324 52%, #07111f 100%);
+            color: var(--text);
+        }
+
+        .poster {
+            position: relative;
+            width: 1080px;
+            height: 1080px;
+            overflow: hidden;
+            border-radius: 40px;
+            padding: 68px;
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0)),
+                linear-gradient(145deg, rgba(8, 21, 38, 0.96), rgba(2, 8, 17, 0.96));
+            border: 1px solid rgba(132, 220, 255, 0.25);
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, 0.55),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+        }
+
+        .poster::before,
+        .poster::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        .poster::before {
+            background:
+                linear-gradient(rgba(124, 216, 255, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(124, 216, 255, 0.08) 1px, transparent 1px);
+            background-size: 72px 72px;
+            mask-image: linear-gradient(180deg, rgba(255, 255, 255, 0.45), transparent 88%);
+        }
+
+        .poster::after {
+            background:
+                radial-gradient(circle at 15% 20%, rgba(95, 124, 255, 0.4), transparent 16%),
+                radial-gradient(circle at 82% 18%, rgba(112, 239, 255, 0.24), transparent 18%),
+                radial-gradient(circle at 68% 80%, rgba(169, 255, 109, 0.12), transparent 14%);
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .topbar,
+        .cards,
+        .details-grid,
+        .footer {
+            display: flex;
+            gap: 22px;
+        }
+
+        .topbar {
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .brand img {
+            width: 94px;
+            height: 94px;
+            object-fit: contain;
+            border-radius: 24px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .brand small,
+        .eyebrow,
+        .schedule-card p,
+        .contact-card p,
+        .note,
+        .time-pill {
+            color: var(--muted);
+        }
+
+        .admission-tag {
+            padding: 14px 24px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, rgba(169, 255, 109, 0.18), rgba(112, 239, 255, 0.2));
+            border: 1px solid rgba(169, 255, 109, 0.35);
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 12px 0 0;
+            font-size: 88px;
+            line-height: 0.95;
+            letter-spacing: -0.04em;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.3fr 0.9fr;
+            gap: 28px;
+            align-items: end;
+        }
+
+        .hero-copy p {
+            margin: 18px 0 0;
+            max-width: 620px;
+            font-size: 26px;
+            line-height: 1.45;
+            color: #d8eeff;
+        }
+
+        .highlight {
+            color: var(--highlight);
+        }
+
+        .panel {
+            background: var(--bg-soft);
+            border: 1px solid var(--line);
+            border-radius: 30px;
+            backdrop-filter: blur(12px);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        .lead-card {
+            padding: 28px;
+        }
+
+        .lead-card h2,
+        .courses h2,
+        .schedule-card h3,
+        .contact-card h3 {
+            margin: 0;
+        }
+
+        .lead-card h2 {
+            font-size: 38px;
+            margin-bottom: 14px;
+        }
+
+        .lead-card ul {
+            margin: 0;
+            padding-left: 24px;
+            display: grid;
+            gap: 12px;
+            font-size: 24px;
+            color: #d9efff;
+        }
+
+        .cards {
+            flex: 1;
+        }
+
+        .courses {
+            flex: 1.35;
+            padding: 30px;
+        }
+
+        .courses h2 {
+            font-size: 34px;
+            margin-bottom: 22px;
+        }
+
+        .course-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .course-pill,
+        .time-pill,
+        .cta a {
+            border-radius: 999px;
+        }
+
+        .course-pill {
+            padding: 14px 20px;
+            font-size: 23px;
+            font-weight: 700;
+            background: linear-gradient(120deg, rgba(95, 124, 255, 0.16), rgba(112, 239, 255, 0.14));
+            border: 1px solid rgba(120, 218, 255, 0.22);
+        }
+
+        .details-grid {
+            flex: 1;
+        }
+
+        .schedule-card,
+        .contact-card {
+            flex: 1;
+            padding: 28px;
+        }
+
+        .schedule-card h3,
+        .contact-card h3 {
+            font-size: 30px;
+            margin-bottom: 14px;
+        }
+
+        .schedule-card p,
+        .contact-card p,
+        .footer-note {
+            margin: 0 0 12px;
+            font-size: 22px;
+            line-height: 1.4;
+        }
+
+        .times {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .time-pill {
+            padding: 12px 18px;
+            font-size: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .footer {
+            margin-top: auto;
+            align-items: stretch;
+        }
+
+        .contact-block {
+            flex: 1;
+            padding: 28px 30px;
+        }
+
+        .contact-line {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 23px;
+        }
+
+        .contact-line:last-child {
+            border-bottom: 0;
+        }
+
+        .contact-line span:first-child {
+            color: var(--muted);
+        }
+
+        .cta {
+            width: 285px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 16px;
+            background: linear-gradient(160deg, rgba(95, 124, 255, 0.2), rgba(112, 239, 255, 0.12));
+        }
+
+        .cta a {
+            display: block;
+            text-align: center;
+            padding: 16px 20px;
+            font-size: 24px;
+            font-weight: 700;
+            text-decoration: none;
+            color: #05111f;
+            background: linear-gradient(90deg, var(--highlight), #70efff);
+        }
+
+        .cta .secondary {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--text);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .footer-note {
+            margin-top: 10px;
+            color: #dff3ff;
+            font-weight: 700;
+        }
+
+        @media (max-width: 1140px) {
+            body {
+                padding: 0;
+            }
+
+            .poster {
+                width: min(100vw, 1080px);
+                height: min(100vw, 1080px);
+                border-radius: 0;
+                padding: 42px;
+            }
+
+            h1 {
+                font-size: 62px;
+            }
+
+            .hero-copy p,
+            .lead-card ul,
+            .course-pill,
+            .schedule-card p,
+            .contact-card p,
+            .contact-line,
+            .footer-note,
+            .cta a {
+                font-size: 18px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <main class="poster">
+        <div class="content">
+            <div class="topbar">
+                <div class="brand">
+                    <img src="./assets/123.png" alt="SkillerMind logo">
+                    <div>
+                        <small>SKILLERMIND</small>
+                        <h1>Future-Ready<br>Skills Start Here</h1>
+                    </div>
+                </div>
+                <div class="admission-tag">Admission Is Open</div>
+            </div>
 
+            <section class="hero">
+                <div class="hero-copy">
+                    <div class="eyebrow">Professional online training with a modern learning experience</div>
+                    <p>Upskill with <span class="highlight">live online classes</span> plus <span class="highlight">recorded lectures</span> so students can revise anytime and stay ahead.</p>
+                </div>
+                <div class="lead-card panel">
+                    <h2>Why Join SkillerMind?</h2>
+                    <ul>
+                        <li>Industry-focused courses</li>
+                        <li>Flexible evening slots</li>
+                        <li>Online classes with recorded access</li>
+                        <li>Guidance to build job-ready skills</li>
+                    </ul>
+                </div>
+            </section>
 
-    <p>5 <sup>2</sup> </p>
-    <h1>heading 01</h1>
-    <h2>heading 02</h2>
-    <h3>heading 03</h3>
-    <h4>heading 04</h4>
-    <h5>heading 05</h5>
-    <h6>heading 06</h6>
-    <p>hello paragraph</p>
-    <p>H <sub>2</sub>O</p>
-    <abbr title="International system of Ofices">ISO</abbr>
-    <p>
-        <b>bold</b>
-        <i>italic</i>
-        <u>underline</u>
-        <s>strikethrough</s> <br />
-        <del>delete</del>
-        <em>emphasis</em>
-        <marquee behavior="" direction=""> hello wasim asif</marquee>
-    </p>
-    <br>
+            <section class="cards">
+                <div class="courses panel">
+                    <h2>Featured Courses</h2>
+                    <div class="course-list">
+                        <div class="course-pill">Full Stack Web Development</div>
+                        <div class="course-pill">SEO &amp; Digital Marketing</div>
+                        <div class="course-pill">Artificial Intelligence</div>
+                        <div class="course-pill">Agentic AI</div>
+                        <div class="course-pill">Video Editing</div>
+                    </div>
+                </div>
+            </section>
 
-    <img src="./assets/123.png" height="300px" alt="skillermind" title="skillermind">
+            <section class="details-grid">
+                <div class="schedule-card panel">
+                    <h3>Class Schedule</h3>
+                    <p><strong>Days:</strong> Monday, Wednesday, Friday</p>
+                    <p><strong>Format:</strong> Online + recorded lectures provided to students</p>
+                    <div class="times">
+                        <div class="time-pill">6pm to 8pm</div>
+                        <div class="time-pill">8pm to 10pm</div>
+                        <div class="time-pill">10pm to 12am</div>
+                    </div>
+                </div>
 
-    <br>
-    <hr>
+                <div class="contact-card panel">
+                    <h3>Reach Us</h3>
+                    <p><strong>Phone:</strong> +923108465921</p>
+                    <p><strong>Website:</strong> www.skillermind.com</p>
+                    <p><strong>Instagram:</strong> skillermind.ch</p>
+                    <p><strong>Facebook:</strong> skillermind</p>
+                    <p class="footer-note">Enroll now and contact us today.</p>
+                </div>
+            </section>
 
-    <a href="./routes/about.html"> about page</a>
-    <br>
-    <a href="https://www.google.com/" target="_blank">google</a>
-
-    <hr>
-    <h1>Box file</h1>
-    <p>a document is good in a box file rather than on the desk</p>
-
-    <hr>
-
-    <!-- list -->
-
-    <ol start="50">
-        fruits:
-        <li>apple</li>
-        <li>banana</li>
-        <li>orange</li>
-    </ol>
-
-    <ul>students:
-        <li>matric</li>
-        <li>intermediate</li>
-        <li>bachoular</li>
-    </ul>
-
-    <dl>
-        <dt> <b>Physics:</b> </dt>
-        <dd>the study of matter and energy and thier relationship.</dd>
-    </dl>
-    <hr>
-
-    <ol type="I">
-        students:
-        <li>matric</li>
-        <li>inter</li>
-        <li>bachoular
-            <ul>
-                <li>isma</li>
-                <li>asif</li>
-                <li>nadeem</li>
-            </ul>
-        </li>
-    </ol>
-    
+            <footer class="footer">
+                <div class="contact-block panel">
+                    <div class="contact-line"><span>Phone</span><strong>+923108465921</strong></div>
+                    <div class="contact-line"><span>Website</span><strong>www.skillermind.com</strong></div>
+                    <div class="contact-line"><span>Instagram</span><strong>skillermind.ch</strong></div>
+                    <div class="contact-line"><span>Facebook</span><strong>skillermind</strong></div>
+                </div>
+                <div class="cta panel">
+                    <a href="tel:+923108465921">Enroll Now</a>
+                    <a class="secondary" href="https://www.skillermind.com">Contact Us</a>
+                </div>
+            </footer>
+        </div>
+    </main>
 </body>
 </html>
